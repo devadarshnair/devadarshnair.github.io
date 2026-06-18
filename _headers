@@ -1,0 +1,18 @@
+# HTTP response headers for header-capable static hosts (Netlify, Cloudflare
+# Pages, or any CDN that reads a _headers file). GitHub Pages IGNORES this file
+# and cannot set custom headers — there, the <meta> CSP in Layout.astro is what
+# applies. To get the full set below on a custom domain, front the site with
+# Cloudflare (free) or deploy to a host that honours _headers.
+#
+# Keep the Content-Security-Policy here in sync with the one in
+# src/layouts/Layout.astro (same script hash).
+
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self' 'sha256-fakjl2UpsUDOf9Pz2WbSAiPHkTMMQKkgxqrvMMM89sE='; connect-src 'self'; form-action 'self'; manifest-src 'self'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
